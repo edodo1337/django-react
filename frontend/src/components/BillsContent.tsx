@@ -61,7 +61,6 @@ const BillsContent: React.FC<BillsContentProps> = (props) => {
                 rows: response['results']
             }
         );
-        console.log("State", response);
     }
 
     const retrieveFromPagiLink = (url: string) => {

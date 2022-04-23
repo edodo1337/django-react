@@ -48,7 +48,6 @@ const ClientOrgsContent: React.FC<ClientOrgsContentProps> = (props) => {
                 rows: response['results']
             }
         );
-        console.log("State", response);
     }
 
     const retrieveFromPagiLink = (url: string) => {

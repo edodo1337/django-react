@@ -22,13 +22,11 @@ const LoadClienOrgs: React.FC<LoadClienOrgsProps> = (props) => {
     const [formState, setFormState] = useState<LoadClienOrgsState>({ displayAlert: false, success: false, errMsg: "", disabled: false });
 
     const handleChange = (event: any) => {
-        console.log("?", event.target.files[0]);
         setFormState({ ...formState, file: event.target.files[0] });
     };
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        console.log(formState);
 
         if (!formState.file) return;
         const formData = new FormData();
@@ -89,13 +87,11 @@ const LoadBills: React.FC<LoadBillsProps> = (props) => {
 
 
     const handleChange = (event: any) => {
-        console.log("?", event.target.files[0]);
         setFormState({ ...formState, file: event.target.files[0] });
     };
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        console.log(formState);
 
         if (!formState.file) return;
         const formData = new FormData();
