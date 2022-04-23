@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
+        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
         'PORT': os.getenv('POSTGRES_PORT'),
     }
 }
@@ -140,7 +140,7 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CACHEOPS_REDIS = {'host': 'localhost', 'port': 6379, 'db': 1}
+CACHEOPS_REDIS = {'host': os.getenv('REDIS_HOST', 'localhost'), 'port': 6379, 'db': 1}
 
 CACHEOPS = {'billing.client': {'ops': 'get', 'timeout': 60 * 15}}
 
